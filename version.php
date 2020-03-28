@@ -15,31 +15,19 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Functions for inserting and displaying content
+ * Version details
+ *
  * @package    filter
  * @subpackage simplefilter
  * @copyright  2017 Richard Jones (https://richardnz.net/)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ *
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-/**
- * Custom renderer class for filter_simplefilter
- * @copyright  2017 Richard Jones (https://richardnz.net/)
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
-class filter_simplefilter_renderer extends plugin_renderer_base {
-    /**
-     * This function returns content
-     * @param string $content the text for the collabsible.
-     * @return string the html required to display the content.
-     */
-    public function get_content($content) {
-
-        $data = new stdClass();
-        $data->buttontext = get_string('button_label', 'filter_simplefilter');
-        $data->content = $content;
-        return $this->render_from_template('filter_simplefilter/panel', $data);
-    }
-}
+$plugin->version   = 2020022801;
+$plugin->requires  = 2017051500;
+$plugin->component = 'filter_simplefilter';
+$plugin->maturity = MATURITY_BETA;
+$plugin->release = 'v1.0'; // updated settings
